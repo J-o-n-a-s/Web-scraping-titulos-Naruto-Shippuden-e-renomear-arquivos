@@ -87,7 +87,7 @@ Ao final desse processo acima, o programa informa no console que o processo de r
 
 ![Status da raspagem de dados do site Wikipedia](img/status_web_scraping.png)
 
-### Arquivo "from_wikipedia.py"
+### Arquivo "fix_file_names.py"
 
 Esse é o arquivo com o código responsável por verificar os arquivos MP4 disponíveis na pasta informada pelo usuário, abrir o arquivo CSV buscando o título do episódio corresponde ao arquivo MP4 detectado e renomeá-los.
 
@@ -98,13 +98,22 @@ O arquivo utiliza as bibliotecas a seguir para realizar sua tarefa:
 
 Esse trecho do programa inicia capturando o horário atual para poder informar quanto tempo demorou a execução da renomeação dos arquivos MP4. Depois ele questiona o usuário qual o endereço da pasta que contém os arquivos MP4 que precisa alterar os nomes. Verifica se a pasta existe, se sim continua a lógica, caso o contrário informa ao usuário que a pasta é inexistente. No caso da pasta existir, ele faz a leitura do arquivo CSV contendo os títulos dos episódios, depois o programa pega o nome de cada arquivo na pasta e compara com o conteúdo do CSV, ao encontrar a resposta correspondente o programa renomeia um a um os arquivos MP4. Ao final desse processo, o programa informa que o processo de renomeação foi finalizado e qual foi o tempo que esse processo demorou.
 
-#### Bibliotecas e recursos utilizados
+![Status da renomeação dos arquivos MP4](img/status_renomeacao_arquivos.png)
 
- - PyAutoGUI -> Fundamental para posicionamento do cursor do mouse e simulação do pressionamento de teclas do teclado;
+### Bibliotecas e recursos utilizados
+
+ - OS -> Biblioteca para funções do sistema operacional;
  - Time -> Para adição de tempo e registro do início, fim e duração do processo;
- - Sys -> Para retornar erros de leitura do arquivo TXT;
- - Ctypes -> Para ser possível realizar o bloqueio da máquina no fim da execução do processo de adição de e-mails/domínios. O usuário decide se a máquina será bloqueada ou não;
- - PyInstaller -> Para criação do arquivo executável. Facilitando a utilização do programa mesmo em máquinas que não possuem o Python instalado.
+ - CSV -> Para leitura e escrita de arquivo CSV;
+ - Selenium -> Para executar a raspagem das informações dos sites da internet.
+
+### Funcionamento do programa no console
+
+![Console do programa em funcionamento](img/console.gif)
+
+### Amostra do resultado da execução do programa
+
+![Renomeação dos arquivos MP4](img/resultado.gif)
 
  ## Instalação e execução do projeto
 
