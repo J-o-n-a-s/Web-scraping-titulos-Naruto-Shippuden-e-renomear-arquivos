@@ -45,29 +45,58 @@ Foi criado um laço onde o usuário recebe informações no console. O programa 
 2. Wikipedia;
 3. Pular.
 
+![Apresentação e menu de seleção inicial](img/menu_selecao_inicial.png)
 
+Com a seleção de uma das 3 (três) opções pelo usuário, o programa executará a etapa correspondentes e ao final irá para a próxima etapa. A próxima etapa é questionar o usuário se ele deseja renomear os arquivos, ou ele pode informar que não caso só queira salvar o arquivo CSV com os 500 (quinhentos) títulos dos capítulos do Naruto Shippuden.
 
-1. Faça o login em seu e-mail;
-2. Clique sobre o seu nome e selecione "Configurações";
+Caso o usuário selecione que deseja renomear os arquivos, ele deverá informar qual é o caminho onde se encontram os arquivos MP4 no próximo questionamento no console do programa. No caso do usuário entrar com opção inválida, o programa irá avisar e continuar aguardando uma opção válida.
 
- ![Configuração](https://www.locaweb.com.br/ajuda/wp-content/uploads/2018/05/config_filtro_web_novo.jpg "Configuração")
+![Seleção para renomear ou não arquivos MP4](img/menu_selecao_secundaria.png)
 
-3. Do lado esquerdo do navegador clique em "Filtros e Regras";
-4. Emails Bloqueados ou Emails Liberados;
+Ao final da execução de todas etapas, será apresentada a mensagem "Obrigado e até logo" no console indicando que o programa chegou ao fim da execução.
 
- ![Emails Bloqueados](https://www.locaweb.com.br/ajuda/wp-content/uploads/2020/06/emails_bloqueados-01.png "Emails Bloqueados")
+### Arquivo "from_anime_hd.py"
 
- ![Emails Liberados](https://www.locaweb.com.br/ajuda/wp-content/uploads/2020/06/emails_liberados-02.png "Emails Liberados")
+Esse é o arquivo com o código responsável pela raspagem dos títulos dos capítulos no site Anime HD.
 
-5. Inserir no campo o endereço de e-mail, ou do domínio que deseja bloquear, ou liberar;
-6. Clique no botão "Adicionar";
-7. Ao fim da inserção dos e-mails/domínios, clique no botão "Salvar".
+O arquivo utiliza as bibliotecas a seguir para realizar sua tarefa:
 
-### Inserção automatizada
+1. CSV;
+2. Time;
+3. Selenium.
 
-Fundamentalmente a ideia da programação em Python é realizar os passos 5, 6 e 7 descritos acima, porém, de forma automatizada e a partir da leitura de um arquivo TXT contendo uma lista com todos os e-mails/domínios que desejamos adicionar. Importante salientar que em cada linha do arquivo TXT deve conter apenas um único e-mail ou domínio.
+Esse trecho do programa inicia capturando o horário atual para poder informar quanto tempo demorou a execução da raspagem das informações no site Anime HD. Depois ele acessa o site do Anime HD (sem abertura visível do browser) capturando os títulos, sanitizando o texto encontrado removendo os seguintes caracteres '\ / : * ? " < > |' e inserindo o resultado em uma lista. Ao final da coleta de todos os títulos dos capítulos, o programa grava a lista em arquivo no formato CSV (2 (duas) colunas, a primeira o número do capítulo e a segunda o título sanitizado).
 
-O arquivo TXT pode ser criado com o auxílio de uma planilha em Excel, que facilitará a variações dos e-mails com o ajuste de algumas células, colunas e funções. Futuramente posso pensar em adicionar um módulo no programa para realizar a criação do arquivo TXT sem a necessidade do auxílio de uma planilha no Excel.
+Ao final desse processo acima, o programa informa no console que o processo de raspagem de dados foi finalizada informando o tempo gasto neste processo.
+
+![Status da raspagem de dados do site Anime HD](img/status_web_scraping.PNG)
+
+### Arquivo "from_wikipedia.py"
+
+Esse é o arquivo com o código responsável pela raspagem dos títulos dos capítulos no site Wikipedia.
+
+O arquivo utiliza as bibliotecas a seguir para realizar sua tarefa:
+
+1. CSV;
+2. Time;
+3. Selenium.
+
+Esse trecho do programa inicia capturando o horário atual para poder informar quanto tempo demorou a execução da raspagem das informações no site Wikipedia. Depois ele acessa o site do Wikipedia (sem abertura visível do browser) capturando os títulos, sanitizando o texto encontrado removendo os seguintes caracteres '\ / : * ? " < > |' e inserindo o resultado em uma lista. Ao final da coleta de todos os títulos dos capítulos, o programa grava a lista em arquivo no formato CSV (2 (duas) colunas, a primeira o número do capítulo e a segunda o título sanitizado).
+
+Ao final desse processo acima, o programa informa no console que o processo de raspagem de dados foi finalizada informando o tempo gasto neste processo.
+
+![Status da raspagem de dados do site Wikipedia](img/status_web_scraping.png)
+
+### Arquivo "from_wikipedia.py"
+
+Esse é o arquivo com o código responsável por verificar os arquivos MP4 disponíveis na pasta informada pelo usuário, abrir o arquivo CSV buscando o título do episódio corresponde ao arquivo MP4 detectado e renomeá-los.
+
+O arquivo utiliza as bibliotecas a seguir para realizar sua tarefa:
+
+1. OS;
+2. Time.
+
+Esse trecho do programa inicia capturando o horário atual para poder informar quanto tempo demorou a execução da renomeação dos arquivos MP4. Depois ele questiona o usuário qual o endereço da pasta que contém os arquivos MP4 que precisa alterar os nomes. Verifica se a pasta existe, se sim continua a lógica, caso o contrário informa ao usuário que a pasta é inexistente. No caso da pasta existir, ele faz a leitura do arquivo CSV contendo os títulos dos episódios, depois o programa pega o nome de cada arquivo na pasta e compara com o conteúdo do CSV, ao encontrar a resposta correspondente o programa renomeia um a um os arquivos MP4. Ao final desse processo, o programa informa que o processo de renomeação foi finalizado e qual foi o tempo que esse processo demorou.
 
 #### Bibliotecas e recursos utilizados
 
