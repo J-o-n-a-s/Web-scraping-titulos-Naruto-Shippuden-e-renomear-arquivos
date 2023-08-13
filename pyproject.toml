@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "episodios do naruto"
+version = "0.1.0"
+description = "Episodios do Naruto"
+authors = ["Jonas"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+selenium = "^4.11.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
