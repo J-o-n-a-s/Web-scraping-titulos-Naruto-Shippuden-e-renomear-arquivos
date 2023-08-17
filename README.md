@@ -23,7 +23,7 @@ Inicialmente a raspagem dos dados foram realizadas no site Wikipedia, porém eu 
 
 ## Motivação
 
-Tudo começou com a dificuldade de saber quais episódios eu já havia assistido e quais os próximos e não só isso. Os arquivos estava nomeados apenas com a inicial "E" e os três dígitos do número do episódio, sende de 001 até 500.
+Tudo começou com a dificuldade de saber quais episódios eu já havia assistido e quais os próximos e não só isso. Os arquivos estava nomeados apenas com a inicial "E" e os três dígitos do número do episódio, sendo de 001 até 500.
 
 Como os nomes do episódios não continham o nome do episódio eu sempre precisa consultar na internet e saber do que se tratava a histório do episódio. Eu tinha a opção de toda vez consultar o nome do episódio na internet ou então facilitar a vida incluindo o nome do episódio diretamente no nome do arquivo MP4.
 
