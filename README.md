@@ -21,6 +21,17 @@ Projeto para realizar a raspagem em sites (Wikipedia e/ou Anime HD) dos títulos
 
 Inicialmente a raspagem dos dados foram realizadas no site Wikipedia, porém eu notei que lá não havia informações dos episódios que eram semi fillers e/ou fillers. Por conta disso, acabei adicionando e deixando selecionável a raspagem em um segundo site, Anime HD, onde esse sim existe as informações se os episódios são semi fillers, fillers ou normais.
 
+**Importante**
+
+Para ajudar nos testes deste projeto, foi necessária a criação de um projeto auxiliar. O projeto auxliar cria arquivos customizados para facilitar os testes desse projeto principal. Ele pode ser verificado no seguinte link [Criação de arquivos customizados](https://github.com/J-o-n-a-s/CriacaoDeArquivos). Esse projeto auxliar permite customizar a criação de arquivos, as principais customizações são:
+ - Seleção da pasta onde os arquivos serão criados;
+ - Definição do prefixo dos arquivos;
+ - Definição da quantidade de arquivos que serão criados;
+ - Se a numeração dos arquivos será preenchida com zeros a esquerda ou não. Caso sejam preenchidos com zero a esquerda o nome de todos os arquivos terão a mesma quantidade de caracteres;
+ - Definição da extensão que os arquivos criados terão.
+
+Esses arquivos foram criados sem conteúdo, apenas com os mesmos nomes e quantidades de arquivos baseado na quantidade e nomes dos arquivos do Naruto Shippuden.
+
 ## Motivação
 
 Tudo começou com a dificuldade de saber quais episódios eu já havia assistido e quais os próximos e não só isso. Os arquivos estava nomeados apenas com a inicial "E" e os três dígitos do número do episódio, sendo de 001 até 500.
@@ -33,7 +44,7 @@ Por conta do citado acima, eu decidi automatizar todo esse processo fazendo a pr
 
 ## Descrição do projeto
 
-O projeto foi desenvolvido em Python 3.11 e dividido em 4 (quatro) arquivos (fix_file_names.py, from_anime_hd.py, from_wikipedia.py, main.py). A seguir vou explanar um pouco sobre o conteúdo de cada arquivo.
+O projeto foi desenvolvido em Python 3.11 e dividido em 4 (quatro) arquivos (fix_file_names.py, from_anime_hd.py, from_wikipedia.py, main.py). A seguir explano um pouco sobre o conteúdo de cada arquivo.
 
 ### Arquivo "main.py"
 
